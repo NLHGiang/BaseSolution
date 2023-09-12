@@ -9,6 +9,7 @@ using BaseSolution.Application.ValueObjects.Pagination;
 using BaseSolution.Application.ValueObjects.Respone;
 using BaseSolution.Domain.Entities;
 using BaseSolution.Infrastructure.Database.AppDbContext;
+using BaseSolution.Infrastructure.Extensions;
 using Microsoft.EntityFrameworkCore;
 
 namespace BaseSolution.Infrastructure.Implements.Repositories.ReadOnly
@@ -53,26 +54,15 @@ namespace BaseSolution.Infrastructure.Implements.Repositories.ReadOnly
             try
             {
                 IQueryable<ExampleEntity> queryable = _exampleEntities.AsNoTracking().AsQueryable();
-
-                //Force to sort by id asc 
-                IQueryable<ExampleEntity> finalQuery = queryable.OrderBy(x => x.Id);
-                //IQueryable<ExampleEntity> hasPreviousQuery = queryable.OrderBy(x => x.Id);
-
-                // Hit to the db to get data back to client side
-                var result = await finalQuery
-                    .ProjectTo<ExampleDto>(_mapper.ConfigurationProvider)
-                .Skip((request.PageNumber - 1) * request.PageSize)
-                    .Take(request.PageSize + 1)
-                    .ToListAsync(cancellationToken);
-
-                bool hasNext = result.Count == request.PageSize + 1;
+                var result = await _exampleEntities.AsNoTracking()
+                    .PaginateAsync<ExampleEntity, ExampleDto>(request, _mapper, cancellationToken);
 
                 return RequestResult<PaginationResponse<ExampleDto>>.Succeed(new PaginationResponse<ExampleDto>()
                 {
                     PageNumber = request.PageNumber,
                     PageSize = request.PageSize,
-                    HasNext = hasNext,
-                    Data = result.Take(request.PageSize).ToList()
+                    HasNext = result.HasNext,
+                    Data = result.Data
                 });
             }
             catch (Exception e)
