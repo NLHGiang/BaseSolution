@@ -3,12 +3,12 @@ using BaseSolution.Application.Interfaces.Repositories.ReadWrite;
 using BaseSolution.Application.Interfaces.Services;
 using BaseSolution.Application.ValueObjects.Common;
 using BaseSolution.Application.ValueObjects.Respone;
+using BaseSolution.Domain.Constants;
 using BaseSolution.Domain.Entities;
 using BaseSolution.Infrastructure.Database.AppDbContext;
 using Microsoft.EntityFrameworkCore;
-using SatoshiCash.Server.Domain.Constants;
 
-namespace SatoshiCash.Server.Infrastructure.Implements.Repositories.ReadWrite
+namespace BaseSolution.Infrastructure.Implements.Repositories.ReadWrite
 {
     public class ExampleReadWriteRepository : IExampleReadWriteRepository
     {
@@ -20,7 +20,7 @@ namespace SatoshiCash.Server.Infrastructure.Implements.Repositories.ReadWrite
             _localizationService = localizationService;
             _dbContext = dbContext;
         }
-        public async Task<RequestResult<long>> AddExampleAsync(ExampleEntity entity, CancellationToken cancellationToken)
+        public async Task<RequestResult<Guid>> AddExampleAsync(ExampleEntity entity, CancellationToken cancellationToken)
         {
             try
             {
@@ -29,11 +29,11 @@ namespace SatoshiCash.Server.Infrastructure.Implements.Repositories.ReadWrite
                 await _dbContext.Examples.AddAsync(entity);
                 await _dbContext.SaveChangesAsync(cancellationToken);
 
-                return RequestResult<long>.Succeed(entity.Id);
+                return RequestResult<Guid>.Succeed(entity.Id);
             }
             catch (Exception e)
             {
-                return RequestResult<long>.Fail(_localizationService["Unable to create example"], new[]
+                return RequestResult<Guid>.Fail(_localizationService["Unable to create example"], new[]
                 {
                     new ErrorItem
                     {

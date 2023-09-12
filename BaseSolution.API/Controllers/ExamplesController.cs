@@ -3,10 +3,10 @@ using BaseSolution.Application.DataTransferObjects.Example.Request;
 using BaseSolution.Application.Interfaces.Repositories.ReadOnly;
 using BaseSolution.Application.Interfaces.Repositories.ReadWrite;
 using BaseSolution.Application.Interfaces.Services;
-using BaseSolution.Infrastructure.ViewModels.Example;
+using BaseSolution.Infrastructure.ViewModels.News;
 using Microsoft.AspNetCore.Mvc;
 
-namespace SatoshiCash.Server.API.Controllers
+namespace BaseSolution.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]

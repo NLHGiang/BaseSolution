@@ -11,7 +11,7 @@ using BaseSolution.Domain.Entities;
 using BaseSolution.Infrastructure.Database.AppDbContext;
 using Microsoft.EntityFrameworkCore;
 
-namespace SatoshiCash.Server.Infrastructure.Implements.Repositories.ReadOnly
+namespace BaseSolution.Infrastructure.Implements.Repositories.ReadOnly
 {
     public class ExampleReadOnlyRepository : IExampleReadOnlyRepository
     {

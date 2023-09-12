@@ -1,4 +1,4 @@
-﻿namespace SatoshiCash.Server.Domain.Constants
+﻿namespace BaseSolution.Domain.Constants
 {
     public class EntityStatus
     {

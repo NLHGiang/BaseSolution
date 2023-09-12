@@ -1,5 +1,5 @@
-﻿using BaseSolution.Domain.Entities.Base;
-using SatoshiCash.Server.Domain.Constants;
+﻿using BaseSolution.Domain.Constants;
+using BaseSolution.Domain.Entities.Base;
 
 namespace BaseSolution.Domain.Entities
 {
@@ -9,12 +9,12 @@ namespace BaseSolution.Domain.Entities
         public string Name { get; set; } = string.Empty;
         public string Status { get; set; } = EntityStatus.Active;
 
-        public DateTimeOffset CreatedTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public long? CreatedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTimeOffset ModifiedTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public long? ModifiedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool Deleted { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public long? DeletedBy { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public DateTimeOffset DeletedTime { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTimeOffset CreatedTime { get; set; }
+        public long? CreatedBy { get; set; }
+        public DateTimeOffset ModifiedTime { get; set; }
+        public long? ModifiedBy { get; set; }
+        public bool Deleted { get; set; }
+        public long? DeletedBy { get; set; }
+        public DateTimeOffset DeletedTime { get; set; }
     }
 }
