@@ -10,11 +10,11 @@ namespace BaseSolution.Domain.Entities
         public string Status { get; set; } = EntityStatus.Active;
 
         public DateTimeOffset CreatedTime { get; set; }
-        public long? CreatedBy { get; set; }
+        public Guid? CreatedBy { get; set; }
         public DateTimeOffset ModifiedTime { get; set; }
-        public long? ModifiedBy { get; set; }
+        public Guid? ModifiedBy { get; set; }
         public bool Deleted { get; set; }
-        public long? DeletedBy { get; set; }
+        public Guid? DeletedBy { get; set; }
         public DateTimeOffset DeletedTime { get; set; }
     }
 }

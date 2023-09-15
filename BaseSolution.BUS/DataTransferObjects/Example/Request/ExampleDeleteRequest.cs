@@ -3,6 +3,6 @@
     public class ExampleDeleteRequest
     {
         public Guid Id { get; set; }
-        public long? DeletedBy { get; set; }
+        public Guid? DeletedBy { get; set; }
     }
 }

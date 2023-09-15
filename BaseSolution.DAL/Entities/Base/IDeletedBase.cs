@@ -4,7 +4,7 @@
     {
         public bool Deleted { get; set; }
 
-        public long? DeletedBy { get; set; }
+        public Guid? DeletedBy { get; set; }
 
         public DateTimeOffset DeletedTime { get; set; }
 
