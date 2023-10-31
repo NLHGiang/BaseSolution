@@ -1,7 +1,7 @@
 ﻿using BaseSolution.Application.DataTransferObjects.Example;
 using BaseSolution.Application.DataTransferObjects.Example.Request;
 using BaseSolution.Application.ValueObjects.Pagination;
-using BaseSolution.Application.ValueObjects.Respone;
+using BaseSolution.Application.ValueObjects.Response;
 
 namespace BaseSolution.Application.Interfaces.Repositories.ReadOnly
 {

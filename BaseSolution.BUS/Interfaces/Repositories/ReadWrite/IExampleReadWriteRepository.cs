@@ -1,5 +1,5 @@
 ﻿using BaseSolution.Application.DataTransferObjects.Example.Request;
-using BaseSolution.Application.ValueObjects.Respone;
+using BaseSolution.Application.ValueObjects.Response;
 using BaseSolution.Domain.Entities;
 
 namespace BaseSolution.Application.Interfaces.Repositories.ReadWrite

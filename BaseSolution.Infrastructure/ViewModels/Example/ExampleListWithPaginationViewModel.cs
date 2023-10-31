@@ -4,7 +4,7 @@ using BaseSolution.Application.Interfaces.Services;
 using BaseSolution.Application.ValueObjects.Common;
 using BaseSolution.Application.ViewModels;
 
-namespace BaseSolution.Infrastructure.ViewModels.News
+namespace BaseSolution.Infrastructure.ViewModels.Example
 {
     public class ExampleListWithPaginationViewModel : ViewModelBase<ViewExampleWithPaginationRequest>
     {

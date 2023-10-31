@@ -1,9 +1,9 @@
 ﻿using BaseSolution.Application.ValueObjects.Common;
 using System.Text.Json.Serialization;
 
-namespace BaseSolution.Application.ValueObjects.Respone
+namespace BaseSolution.Application.ValueObjects.Response
 {
-    public class APIRespone
+    public class APIResponse
     {
         [JsonPropertyName("success")]
         public bool Success { get; set; }

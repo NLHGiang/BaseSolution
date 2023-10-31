@@ -14,9 +14,10 @@ namespace BaseSolution.Infrastructure.Extensions
         {
             LocalizationConfiguration localizationConfig = new LocalizationConfiguration();
             configurationManager.GetSection("Localization").Bind(localizationConfig);
+
             services.AddLocalization(delegate (LocalizationOptions options)
             {
-                options.ResourcesPath = string.Empty;
+                options.ResourcesPath = "Resources";
             });
 
             List<CultureInfo> supportedCultures = localizationConfig.SupportedCultures.Select((x) => new CultureInfo(x)).ToList();

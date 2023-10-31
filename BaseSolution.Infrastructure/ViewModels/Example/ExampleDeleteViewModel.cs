@@ -4,28 +4,27 @@ using BaseSolution.Application.Interfaces.Repositories.ReadWrite;
 using BaseSolution.Application.Interfaces.Services;
 using BaseSolution.Application.ValueObjects.Common;
 using BaseSolution.Application.ViewModels;
-using BaseSolution.Domain.Entities;
 
-namespace BaseSolution.Infrastructure.ViewModels.News
+namespace BaseSolution.Infrastructure.ViewModels.Example
 {
-    public class ExampleUpdateViewModel : ViewModelBase<ExampleUpdateRequest>
+    public class ExampleDeleteViewModel : ViewModelBase<ExampleDeleteRequest>
     {
         public readonly IExampleReadWriteRepository _exampleReadWriteRepository;
         private readonly ILocalizationService _localizationService;
         private readonly IMapper _mapper;
 
-        public ExampleUpdateViewModel(IExampleReadWriteRepository ExampleReadWriteRepository, ILocalizationService localizationService, IMapper mapper)
+        public ExampleDeleteViewModel(IExampleReadWriteRepository ExampleReadWriteRepository, ILocalizationService localizationService, IMapper mapper)
         {
             _exampleReadWriteRepository = ExampleReadWriteRepository;
             _localizationService = localizationService;
             _mapper = mapper;
         }
 
-        public override async Task HandleAsync(ExampleUpdateRequest request, CancellationToken cancellationToken)
+        public override async Task HandleAsync(ExampleDeleteRequest request, CancellationToken cancellationToken)
         {
             try
             {
-                var result = await _exampleReadWriteRepository.UpdateExampleAsync(_mapper.Map<ExampleEntity>(request), cancellationToken);
+                var result = await _exampleReadWriteRepository.DeleteExampleAsync(request, cancellationToken);
 
                 Success = result.Success;
                 ErrorItems = result.Errors;
@@ -40,7 +39,7 @@ namespace BaseSolution.Infrastructure.ViewModels.News
                     new ErrorItem
                     {
                         Error = _localizationService["Error occurred while updating the Example"],
-                        FieldName = string.Concat(LocalizationString.Common.FailedToUpdate, "Example")
+                        FieldName = string.Concat(LocalizationString.Common.FailedToDelete, "Example")
                     }
                 };
             }

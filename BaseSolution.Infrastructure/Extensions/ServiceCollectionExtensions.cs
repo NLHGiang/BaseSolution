@@ -14,13 +14,13 @@ namespace BaseSolution.Infrastructure.Extensions
             services.AddDbContextPool<ExampleReadOnlyDbContext>(options =>
             {
                 // Configure your DbContext options here
-                options.UseSqlServer(configuration.GetConnectionString("SatoshiCashDbConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("DbConnection"));
             });
 
             services.AddDbContextPool<ExampleReadWriteDbContext>(options =>
             {
                 // Configure your DbContext options here
-                options.UseSqlServer(configuration.GetConnectionString("SatoshiCashDbConnection"));
+                options.UseSqlServer(configuration.GetConnectionString("DbConnection"));
             });
 
             services.AddTransient<ILocalizationService, LocalizationService>();

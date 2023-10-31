@@ -3,7 +3,7 @@ using BaseSolution.Application.ValueObjects.Exceptions;
 using MediatR;
 using System.Diagnostics.CodeAnalysis;
 
-namespace BaseSolution.Application.ValueObjects.Respone
+namespace BaseSolution.Application.ValueObjects.Response
 {
     /// <summary>
     /// To generate result for all actions in this system.

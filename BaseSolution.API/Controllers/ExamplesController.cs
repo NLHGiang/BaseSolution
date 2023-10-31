@@ -3,21 +3,21 @@ using BaseSolution.Application.DataTransferObjects.Example.Request;
 using BaseSolution.Application.Interfaces.Repositories.ReadOnly;
 using BaseSolution.Application.Interfaces.Repositories.ReadWrite;
 using BaseSolution.Application.Interfaces.Services;
-using BaseSolution.Infrastructure.ViewModels.News;
+using BaseSolution.Infrastructure.ViewModels.Example;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BaseSolution.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ExampleController : ControllerBase
+    public class ExamplesController : ControllerBase
     {
         public readonly IExampleReadOnlyRepository _exampleReadOnlyRepository;
         public readonly IExampleReadWriteRepository _exampleReadWriteRepository;
         private readonly ILocalizationService _localizationService;
         private readonly IMapper _mapper;
 
-        public ExampleController(IExampleReadOnlyRepository exampleReadOnlyRepository, IExampleReadWriteRepository exampleReadWriteRepository, IConfiguration configuration, ILocalizationService localizationService, IMapper mapper)
+        public ExamplesController(IExampleReadOnlyRepository exampleReadOnlyRepository, IExampleReadWriteRepository exampleReadWriteRepository, ILocalizationService localizationService, IMapper mapper)
         {
             _exampleReadOnlyRepository = exampleReadOnlyRepository;
             _exampleReadWriteRepository = exampleReadWriteRepository;

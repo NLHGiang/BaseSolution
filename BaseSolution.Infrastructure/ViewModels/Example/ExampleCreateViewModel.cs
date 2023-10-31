@@ -7,7 +7,7 @@ using BaseSolution.Application.ValueObjects.Common;
 using BaseSolution.Application.ViewModels;
 using BaseSolution.Domain.Entities;
 
-namespace BaseSolution.Infrastructure.ViewModels.News
+namespace BaseSolution.Infrastructure.ViewModels.Example
 {
     public class ExampleCreateViewModel : ViewModelBase<ExampleCreateRequest>
     {

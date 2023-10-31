@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="DataTransferObjects\Example\Respone\" />
+    <Folder Include="DataTransferObjects\Example\Response\" />
   </ItemGroup>
 
   <ItemGroup>
