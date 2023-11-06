@@ -12,7 +12,7 @@ namespace BaseSolution.Infrastructure.Extensions;
 public static class QueryableExtensions
 {
     public static async Task<PaginationResponse<TSourceEntity>> PaginateAsync<TSourceEntity>(
-        this IQueryable<TSourceEntity> queryable, PaginationRequest request, IMapper mapper,
+        this IQueryable<TSourceEntity> queryable, PaginationRequest request,
         CancellationToken cancellationToken)
     {
         // Force to sort by CreateTime asc 
