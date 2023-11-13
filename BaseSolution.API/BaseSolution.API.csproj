@@ -12,7 +12,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\BaseSolution.BUS\BaseSolution.Application.csproj" />
     <ProjectReference Include="..\BaseSolution.Infrastructure\BaseSolution.Infrastructure.csproj" />
   </ItemGroup>
 
